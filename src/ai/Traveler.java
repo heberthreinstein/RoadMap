@@ -1,4 +1,7 @@
-package ia;
+package ai;
+
+import java.util.Iterator;
+import java.util.List;
 
 import jade.core.Agent;
 import world.City;
@@ -25,6 +28,19 @@ public class Traveler extends Agent {
 		map.addRoad(pitesti, rimnicu);
 		map.addRoad(rimnicu, sibiu);
 		map.addRoad(sibiu, fagaras);
+		
+		List<City> cities = map.getCityNextTo(bucharest);
+		
+		Iterator<City> it = cities.iterator();
+		
+		while (it.hasNext()) {
+			City city = (City) it.next();
+			System.out.println(city.getName());
+		}
+		
+		System.out.println("Hello I'm "+ getLocalName()+" and I love traveling");
+		
+		
 		
 		
 	}

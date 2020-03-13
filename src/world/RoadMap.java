@@ -1,6 +1,7 @@
 package world;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -9,12 +10,16 @@ public class RoadMap {
 	
 	private Map<City, List<City>> adjVertices;
 	
+	public RoadMap() {
+		adjVertices = new HashMap<City, List<City>>();
+	}
+	
 	/**
 	 * Add a city on the map
 	 * @param c City object
 	 */
 	public void addCity(City c) {
-	    adjVertices.putIfAbsent(c, new ArrayList<City>());
+	    this.adjVertices.putIfAbsent(c, new ArrayList<City>());
 	}
 	
 	/**
@@ -22,8 +27,8 @@ public class RoadMap {
 	 * @param c City object
 	 */
 	public void removeCity(City c) {
-	    adjVertices.values().stream().forEach(e -> e.remove(c));
-	    adjVertices.remove(c);
+	    this.adjVertices.values().stream().forEach(e -> e.remove(c));
+	    this.adjVertices.remove(c);
 	}
 	
 	/**
@@ -32,8 +37,8 @@ public class RoadMap {
 	 * @param c2 City object
 	 */
 	public void addRoad(City c1, City c2) {
-	    adjVertices.get(c1).add(c2);
-	    adjVertices.get(c2).add(c1);
+	    this.adjVertices.get(c1).add(c2);
+	    this.adjVertices.get(c2).add(c1);
 	}
 	
 	/**
@@ -42,8 +47,8 @@ public class RoadMap {
 	 * @param c2 City object
 	 */
 	public void removeRoad(City c1, City v2) {
-	    List<City> eV1 = adjVertices.get(c1);
-	    List<City> eV2 = adjVertices.get(v2);
+	    List<City> eV1 = this.adjVertices.get(c1);
+	    List<City> eV2 = this.adjVertices.get(v2);
 	    if (eV1 != null)
 	        eV1.remove(v2);
 	    if (eV2 != null)
@@ -55,7 +60,7 @@ public class RoadMap {
 	 * @param c City object of the base city  
 	 * @return List of cities
 	 */
-	List<City> getCityNextTo(City c) {
-	    return adjVertices.get(c);
+	public List<City> getCityNextTo(City c) {
+	    return this.adjVertices.get(c);
 	}
 }
