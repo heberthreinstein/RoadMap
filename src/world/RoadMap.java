@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 
 public class RoadMap {
@@ -62,5 +63,9 @@ public class RoadMap {
 	 */
 	public List<City> getCityNextTo(City c) {
 	    return this.adjVertices.get(c);
+	}
+
+	public Set<City> getCities() {
+		return this.adjVertices.keySet();
 	}
 }
