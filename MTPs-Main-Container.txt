@@ -1,1 +1,1 @@
-http://localhost:7778/acc
+http://GS-TI02:7778/acc

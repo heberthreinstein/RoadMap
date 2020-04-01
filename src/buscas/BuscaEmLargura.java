@@ -6,8 +6,6 @@ import java.util.Queue;
 import nos.No;
 
 public class BuscaEmLargura extends Busca {
-	
-	// Fila de dados FiFo
 	private Queue<No> filaNos;
 		
 	public BuscaEmLargura(int valorBusca) {

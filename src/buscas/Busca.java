@@ -3,7 +3,6 @@ package buscas;
 import nos.No;
 
 public abstract class Busca {
-
 	private int valorBusca;
 	private String textoResposta;
 	
@@ -11,7 +10,6 @@ public abstract class Busca {
 	public abstract int contarNosFolha();
 	
 	protected void obterResultadoPaternal(No no) {
-		// Deveria ser comportamento da busca?
 		String retorno = "";
 		No noValor = no;
 		retorno += getCity(noValor.getValor());
@@ -63,9 +61,9 @@ public abstract class Busca {
 	
 	public void exibirTextoResultado() {
 		if (this.textoResposta != null) {
-			System.out.println("O caminho percorrido será: " + this.textoResposta);
+			System.out.println("Eu passei por: " + this.textoResposta);
 		} else {
-			System.out.println("O valor " + this.valorBusca + " não foi encontrado.");
+			System.out.println("Nessa cidade " + this.valorBusca + ", eu aonda não fui!.");
 		}
 	}
 	

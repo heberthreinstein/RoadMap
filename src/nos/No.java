@@ -1,11 +1,8 @@
 package nos;
 
 public class No{
-
-	private int valor;// Busca - Resultado
-	
+	private int valor;
 	private int custo;
-	
 	private No noPai;	
 	private No noEsquerda;
 	private No noCentro;
